@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="style.css" class="css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Gamer sign-up form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 0.6875rem;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <div class="logo">
+          <img src="./assets/images/logo.svg" alt="logo" />
+          <p>[0]/5 ready</p>
+        </div>
+        <div class="title">
+          <h1><span>//</span> Join the nexus</h1>
+          <p>Initialize your NEONCORE identity</p>
+        </div>
+        <div class="operator">
+          <div class="optitle">
+            <p>Operator ID</p>
+            <p class="counter">[0]/5 ready</p>
+            <h3 class="state-m">Unassigned</h3>
+          </div>
+          <h3 class="state-l">Unassigned</h3>
+          <ul>
+            <li>
+              <p class="li-left">callsign</p>
+              <p class="li-right">bending</p>
+            </li>
+            <li>
+              <p class="li-left">email</p>
+              <p class="li-right">bending</p>
+            </li>
+            <li>
+              <p class="li-left">passwrd</p>
+              <p class="li-right">bending</p>
+            </li>
+            <li>
+              <p class="li-left">confirm</p>
+              <p class="li-right">bending</p>
+            </li>
+            <li>
+              <p class="li-left">terms</p>
+              <p class="li-right">required</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <form class="form">
+        <div class="ftitle">
+          <p>new operator</p>
+          <p>all fields required</p>
+        </div>
+        <div class="formbody">
+          <div class="formname">
+            <label for="fname"><span class="arrow">></span> callsign</label>
+            <input
+              type="text"
+              name="fname"
+              id="fname"
+              placeholder="e.g. Vortex_07"
+              aria-describedby="fname"
+            />
+            <small id="fname">3-20 characters: letters, numbers, _ or -</small>
+          </div>
+          <div class="formemail">
+            <label for="femail"><span class="arrow">></span> email</label>
+            <input
+              type="email"
+              name="femail"
+              id="femail"
+              placeholder="you@example.com"
+            />
+          </div>
+          <div class="formpass">
+            <label for="fpass"><span class="arrow">></span> password</label>
+            <div class="password-input">
+              <input
+                type="password"
+                name="fpass"
+                id="fpass"
+                aria-describedby="pass"
+              />
+              <span class="eye">
+                <img src="assets/images/icon-eye.svg" alt="eye" />
+              </span>
+            </div>
+            <div class="strength">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <small id="fname">at least 8 characters</small>
+          </div>
+          <div class="formconpass">
+            <label for="fcon"
+              ><span class="arrow">></span> confirm password</label
+            >
+            <div class="password-input">
+              <input type="password" name="fcon" id="fcon" />
+              <span class="eye">
+                <img src="assets/images/icon-eye.svg" alt="eye" />
+              </span>
+            </div>
+          </div>
+          <div class="formcheckbox">
+            <input
+              type="checkbox"
+              class="inputcheck"
+              name="fcheck"
+              id="fcheck"
+              value="checkbox"
+            />
+            <span class="newcheck"></span>
+            <label for="fcheck" class="labelcheck"
+              >I accept the <a href="http://terms">Terms</a> and
+              <a href="http://Privacy Policy">Privacy Policy</a>.</label
+            >
+          </div>
+          <input type="submit" value="Initialize account" class="submit" />
+          <p class="log">Already an operator? <a href="">log in</a></p>
+        </div>
+      </form>
+    </div>
+
+    <!--<footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </footer>-->
+  </body>
+</html>

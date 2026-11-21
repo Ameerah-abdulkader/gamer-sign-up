@@ -1,0 +1,440 @@
+:root {
+  /* Neutral colors */
+  --neutral-950: hsl(214 37% 4%);
+  --neutral-900: hsl(210 39% 7%);
+  --neutral-800: hsl(211 30% 13%);
+  --neutral-700: hsl(211 22% 24%);
+  --neutral-600: hsl(210 18% 42%);
+  --neutral-500: hsl(211 14% 50%);
+  --neutral-400: hsl(211 13% 55%);
+  --neutral-300: hsl(211 18% 68%);
+  --neutral-100: hsl(208 49% 92%);
+  --neutral-50: hsl(204 60% 97%);
+
+  /* Accent colors */
+  --lime-500: hsl(77 90% 59%);
+  --lime-700: hsl(77 67% 39%);
+  --red-400: hsl(4 100% 74%);
+  --amber-400: hsl(40 100% 65%);
+  --navy-950: hsl(214 60% 2%);
+
+  /* Transparent colors */
+  --lime-alpha-60: hsl(77 90% 59% / 0.6);
+  --lime-alpha-40: hsl(77 90% 59% / 0.4);
+  --navy-alpha-80: hsl(214 60% 2% / 0.8);
+  --navy-alpha-60: hsl(214 60% 2% / 0.6);
+
+  /* Spacing */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-80: 80px;
+}
+
+@font-face {
+  /*not the headline*/
+  font-family: "mono";
+  src: url(./assets/fonts/jetbrains-mono/jetbrains-mono-variable.ttf)
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  /*the headline*/
+  font-family: "orb";
+  src: url(./assets/fonts/orbitron/orbitron-variable.ttf) format("truetype");
+  font-weight: 400 900;
+  font-style: normal;
+}
+
+body {
+  background-color: hsl(217.5deg 40% 3.92%);
+  position: relative;
+  overflow-x: hidden;
+}
+body::before {
+  content: url(assets/images/pattern-backdrop.svg);
+  position: absolute;
+  right: -23%;
+  top: -20%;
+  z-index: -1;
+}
+.container {
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 32px;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+}
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo img {
+  width: 150px; /* Fixed width */
+}
+.logo p {
+  display: none;
+  font-family: "mono", monospace;
+  text-transform: uppercase;
+  color: var(--neutral-400);
+  font-weight: 400;
+  font-size: clamp(12px, 5vw, 16px);
+}
+.left .title h1 {
+  color: hsl(204 60% 97%);
+  font-family: "orb", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 30px 0 10px;
+}
+h1 span {
+  color: hsl(77 90% 59%);
+}
+
+.left .title p {
+  font-family: "mono", monospace;
+  text-transform: uppercase;
+  color: var(--neutral-400);
+  font-weight: 400;
+  font-size: clamp(12px, 5vw, 16px);
+}
+
+.operator {
+  border-top: 2px solid var(--neutral-800);
+  margin-top: 30px;
+}
+.optitle {
+  display: flex;
+  justify-content: space-between;
+  font-family: "mono", monospace;
+  text-transform: uppercase;
+  color: var(--neutral-400);
+  font-weight: 400;
+  font-size: clamp(12px, 5vw, 16px);
+  h3 {
+    display: none;
+  }
+}
+h3 {
+  font-family: "orb", sans-serif;
+  text-transform: uppercase;
+  margin: 5px 0px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  font-size: clamp(24px, 5vw, 32px);
+  color: var(--neutral-500);
+  margin: 16px 0;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "mono", monospace;
+  text-transform: uppercase;
+  color: var(--neutral-600);
+  font-weight: 500;
+  font-size: clamp(12px, 5vw, 14px);
+  line-height: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+li::after {
+  content: "";
+  flex: 1 1 0;
+  min-width: 0;
+  border-bottom: 1px solid var(--neutral-800);
+  order: 1;
+}
+
+.li-left {
+  order: 0;
+  padding-right: 4px;
+}
+
+.li-right {
+  order: 2;
+  padding-left: 4px;
+}
+/*start form*/
+form {
+  border: 2px solid var(--neutral-800);
+  background-color: hsl(212deg 40.54% 7.25%);
+  padding: 32px;
+
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+  }
+  &::before {
+    top: 0;
+    left: 0;
+    border-top: 2px solid var(--lime-500);
+    border-left: 2px solid var(--lime-500);
+  }
+  &::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 2px solid var(--lime-500);
+    border-right: 2px solid var(--lime-500);
+  }
+}
+.ftitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: "mono", monospace;
+  font-weight: 400;
+  font-size: clamp(12px, 5vw, 16px);
+  letter-spacing: 0.12em;
+  border-bottom: 2px solid var(--neutral-700);
+}
+.ftitle p:first-of-type {
+  color: var(--neutral-300);
+  margin-bottom: 12px;
+}
+.ftitle p:last-of-type {
+  color: var(--neutral-700);
+  margin-top: 12px;
+}
+.formbody {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: "mono", monospace;
+  padding-top: 28px;
+}
+label {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: clamp(12px, 5vw, 16px);
+  letter-spacing: 0.12em;
+  color: var(--neutral-600);
+}
+.formbody .arrow {
+  color: var(--lime-700);
+}
+.formname,
+.formemail,
+.formpass,
+.formconpass {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+input {
+  outline-color: var(--lime-500);
+  background-color: hsl(217.5deg 40% 3.92%);
+  border: 2px solid var(--neutral-700);
+  height: 40px;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  width: 100%;
+  cursor: pointer;
+  color: var(--neutral-700);
+  font-family: "mono", monospace;
+  font-weight: 400;
+  font-size: clamp(12px, 5vw, 16px);
+  &:hover {
+    border-color: var(--neutral-100);
+  }
+}
+input::placeholder {
+  color: var(--neutral-700);
+  font-family: "mono", monospace;
+  font-weight: 400;
+  font-size: clamp(12px, 5vw, 16px);
+}
+
+small {
+  color: var(--neutral-700);
+  font-family: "mono", monospace;
+}
+/*for the eye start*/
+.password-input {
+  position: relative;
+}
+
+.eye {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.eye img {
+  display: block;
+  cursor: pointer;
+}
+/*for the eye end*/
+.strength {
+  width: 100%;
+  height: 4px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+.strength div {
+  background-color: var(--neutral-700);
+  width: inherit;
+  height: inherit;
+}
+.formcheckbox {
+  display: flex;
+  align-items: center;
+  font-size: clamp(12px, 5vw, 16px);
+
+  a {
+    color: var(--lime-700);
+    text-decoration-style: dotted;
+    text-underline-offset: 8px;
+
+    &:hover {
+      color: var(--neutral-100);
+    }
+  }
+  .inputcheck {
+    display: none;
+  }
+  .labelcheck {
+    text-transform: none;
+    font-weight: 400;
+    cursor: pointer;
+  }
+  .newcheck {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background-color: hsl(217.5deg 40% 3.92%);
+    border: 2px solid var(--neutral-700);
+    display: inline-block;
+    position: relative;
+    margin-right: 12px;
+    cursor: pointer;
+    &:hover {
+      border-color: var(--neutral-100);
+    }
+  }
+}
+
+.submit {
+  background-color: var(--lime-500);
+  border-color: var(--lime-500);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+  font-family: "mono", monospace;
+  color: black;
+}
+
+.log {
+  color: var(--neutral-600);
+  a {
+    color: var(--lime-700);
+    text-decoration-style: dotted;
+    text-underline-offset: 8px;
+    &:hover {
+      color: var(--neutral-100);
+    }
+  }
+  text-align: center;
+}
+/* Mobile */
+@media (max-width: 767px) {
+  h1 {
+    font-size: clamp(36px, 5vw, 40px);
+  }
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+  ul {
+    display: none;
+  }
+  .logo p {
+    display: block;
+  }
+  .optitle {
+    .state-m {
+      display: block;
+      font-size: clamp(16px, 5vw, 20px);
+      font-weight: 500;
+    }
+    .counter {
+      display: none;
+    }
+  }
+  .state-l {
+    display: none;
+  }
+  .ftitle {
+    flex-direction: column;
+    align-items: start;
+  }
+  label,
+  .formcheckbox,
+  .submit,
+  .log {
+    font-size: clamp(8px, 5vw, 12px);
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  h1 {
+    font-size: clamp(40px, 5vw, 48px);
+  }
+  .container {
+    flex-direction: column;
+  }
+  ul {
+    display: none;
+  }
+  .logo p {
+    display: block;
+  }
+  .optitle {
+    .state-m {
+      display: block;
+      font-size: clamp(16px, 5vw, 20px);
+      font-weight: 500;
+    }
+    .counter {
+      display: none;
+    }
+  }
+  .state-l {
+    display: none;
+  }
+}
+
+/* Laptop */
+@media (min-width: 1024px) {
+  h1 {
+    font-size: clamp(72px, 5vw, 80px);
+  }
+}
